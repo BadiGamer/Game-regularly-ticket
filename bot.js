@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "-";
+const prefix = "t!";
 
 
  
@@ -32,14 +32,14 @@ client.on('ready', () => {
   console.log(`channels! [ " ${client.channels.size} " ]`);
   console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
  
-client.user.setGame("-help -invite|By Mahdi ", "https://www.twitch.tv/alpha");
+client.user.setGame("t!help t!invite|By Mahdi ", "https://www.twitch.tv/alpha");
 });
  
 
  
  client.on("message", (message) => {
  
-   if (message.content.startsWith("-new")) {  
+   if (message.content.startsWith("t!new")) {  
         const reason = message.content.split(" ").slice(1).join(" ");  
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -120,7 +120,7 @@ Support Team ملحوظه يجب عمل رتبه
 
 client.on('message', message => {
   if (true) {
-if (message.content === '-invite') {
+if (message.content === 't!invite') {
       message.author.send(' https://discordapp.com/api/oauth2/authorize?client_id=558575428499931136&permissions=8&scope=bot  |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
  
     }
@@ -129,7 +129,7 @@ if (message.content === '-invite') {
  
  
 client.on('message', message => {
-     if (message.content === "-invite") {
+     if (message.content === "t!invite") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -159,7 +159,7 @@ client.on('message', message => {
     }
 });
 
-const developers = ["302805727511052289","id"]
+const developers = ["527505679171321856","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
